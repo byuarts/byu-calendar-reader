@@ -56,21 +56,22 @@ function y_cal_install() {
 		'all_day_text' =>'All Day', // text to show if event is all day
 		'img_defaults' => array( // image defaults when image url is not given (unber refers to category id)
 			"byu" => plugins_url( "images/default/byu.jpg", __FILE__ ),
-			"288" => plugins_url( "images/default/cpms.jpg", __FILE__ ),
-			"275" => plugins_url( "images/default/chem.jpg", __FILE__ ),
-			"276" => plugins_url( "images/default/cs.jpg", __FILE__ ),
-			"277" => plugins_url( "images/default/geology.jpg", __FILE__ ),
-			"278" => plugins_url( "images/default/math.jpg", __FILE__ ),
-			"279" => plugins_url( "images/default/mathEd.jpg", __FILE__ ),
-			"280" => plugins_url( "images/default/physics.jpg", __FILE__ ),
-			"281" => plugins_url( "images/default/stats.jpg", __FILE__ ),
+			"229" => plugins_url( "images/default/cpms.jpg", __FILE__ ),// Fine Arts & Communications
+			"230" => plugins_url( "images/default/chem.jpg", __FILE__ ),// Communications
+			"231" => plugins_url( "images/default/cs.jpg", __FILE__ ),// Dance
+			"232" => plugins_url( "images/default/geology.jpg", __FILE__ ),// School of Music
+			"233" => plugins_url( "images/default/math.jpg", __FILE__ ),// Theatre & Media Arts
+			"234" => plugins_url( "images/default/mathEd.jpg", __FILE__ ),// Art
+			"235" => plugins_url( "images/default/physics.jpg", __FILE__ ),// Design
+			"499" => plugins_url( "images/default/stats.jpg", __FILE__ ),// BRAVO!
+			"428" => plugins_url( "images/default/stats.jpg", __FILE__ ),// Museum of Art
 		),
 
 
 	// Widget Settings
 		'widget_2column' => false, // show widget in two columns (not showing in admin settings page)
 		'widget_howMany' => 5, // how many events to show on widget
-		'widget_categories1' => '288,275,276,277,278,279,280,281', // These categories will be the first to populate the widget
+		'widget_categories1' => '229,230,231,232,233,234,235,499,428', // These categories will be the first to populate the widget
 		'widget_categories2' => '38', // This is second priority for events to show on widget
 		'widget_priority1_days' => 14, // Limits the amount of days to pull from priority 1 categories
 		'widget_priority2_days' => 14, // Limits the amount of days to pull from priority 2 categories
@@ -90,21 +91,22 @@ function y_cal_install() {
 		'calendar_MaxDescriptionLength' => '300', // max description length on calendar page
 		'calendar_filterCategories' => array( // array for filter settings. Add things here to add filter ability (Title => CategoryID)
 			//"The College" => '70,72,74,75,76,77,78,79',
-			"Physical & Mathmatical Sciences" => array(
-				"The College" => '288',
-				"Chemistry & Biochemistry" => '275',
-				"Computer Science" => '276',
-				"Geological Sciences" => '277',
-				"Mathematics" => '278',
-				"Math Education" => '279',
-				"Physics & Astronomy" => '280',
-				"Statistics" => '281'
+			"College of Fine Arts and Communications" => array(
+				"The College" => '229',
+				"Art" => '275',
+				"BRAVO!" => '499',
+				"Communications" => '230',
+				"Dance" => '231',
+				"Design" => '235',
+				"Museum of Art" => '428',
+				"School of Music" => '232',
+				"Theatre and Media Arts" => '233'
 			)
 		),
 		'calendar_filter_unfiltered_title' => "BYU", // filter name for unfilter
 
 	// Import Settings
-		'first_query' => "274", //This is the parent category to all categories used by CPMS 
+		'first_query' => "229", //This is the parent category to all categories used by BYU Arts 
 		'byu_url' =>'http://calendar.byu.edu/api/Events?', // url for uploading XML stuff
 		'getYears' => 1, // number of years to grab at import
 		'getMonths' => 0, // number of months to brab at import
@@ -267,7 +269,7 @@ function y_cal_loadXML() {
 		$context  = stream_context_create(array('http' => array('header' => 'Accept: application/xml')));
 
 		// have to do two queries so we get the right category for the child events. (ex: Geology shows up under CPMS otherwise)
-		$url1 = $options["byu_url"] . 'categories=274' . '&event[min][date]=' . date('Y-m-d') . '&event[max][date]=' . date("Y-m-d", mktime(0, 0, 0, date("m")+$options["getMonths"],   date("d"),   date("Y")+$options["getYears"]));
+		$url1 = $options["byu_url"] . 'categories=229' . '&event[min][date]=' . date('Y-m-d') . '&event[max][date]=' . date("Y-m-d", mktime(0, 0, 0, date("m")+$options["getMonths"],   date("d"),   date("Y")+$options["getYears"]));
 		$url2 = $options["byu_url"] . 'categories=all'. '&event[min][date]=' . date('Y-m-d') . '&event[max][date]=' . date("Y-m-d", mktime(0, 0, 0, date("m")+$options["getMonths"],   date("d"),   date("Y")+$options["getYears"]));
 
 
