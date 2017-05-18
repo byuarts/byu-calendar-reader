@@ -56,7 +56,7 @@ function y_cal_install() {
 		'all_day_text' =>'All Day', // text to show if event is all day
 		'img_defaults' => array( // image defaults when image url is not given (unber refers to category id)
 			"byu" => plugins_url( "images/default/byu.jpg", __FILE__ ),
-			"229" => plugins_url( "images/default/byu.jpg", __FILE__ ),// Fine Arts & Communications
+			"229" => plugins_url( "images/default/BYUArtscal.jpg", __FILE__ ),// Fine Arts & Communications
 			"230" => plugins_url( "images/default/comms.jpg", __FILE__ ),// Communications
 			"231" => plugins_url( "images/default/dance.jpg", __FILE__ ),// Dance
 			"232" => plugins_url( "images/default/music.jpg", __FILE__ ),// School of Music
