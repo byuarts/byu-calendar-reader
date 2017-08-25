@@ -1,4 +1,4 @@
-<?php
+r<?php
 
 defined('ABSPATH') or die("No script kiddies please!");
 
@@ -57,12 +57,12 @@ function y_cal_install() {
 		'img_defaults' => array( // image defaults when image url is not given (unber refers to category id)
 			"byu" => plugins_url( "images/default/byu.jpg", __FILE__ ),
 			"229" => plugins_url( "images/default/BYUArtscal.jpg", __FILE__ ),// Fine Arts & Communications
-			"230" => plugins_url( "images/default/comms.jpg", __FILE__ ),// Communications
-			"231" => plugins_url( "images/default/dance.jpg", __FILE__ ),// Dance
-			"232" => plugins_url( "images/default/music.jpg", __FILE__ ),// School of Music
-			"233" => plugins_url( "images/default/tma.jpg", __FILE__ ),// Theatre & Media Arts
-			"234" => plugins_url( "images/default/art.jpg", __FILE__ ),// Art
-			"235" => plugins_url( "images/default/design.jpg", __FILE__ ),// Design
+			"230" => plugins_url( "images/default/School-of-Communications.jpg", __FILE__ ),// Communications
+			"231" => plugins_url( "images/default/Department-of-Dance.jpg", __FILE__ ),// Dance
+			"232" => plugins_url( "images/default/School-of-Music.jpg", __FILE__ ),// School of Music
+			"233" => plugins_url( "images/default/Department-of-Theatre-and-Media-Arts.jpg", __FILE__ ),// Theatre & Media Arts
+			"234" => plugins_url( "images/default/Department-of-Art.jpg", __FILE__ ),// Art
+			"235" => plugins_url( "images/default/Department-of-Design.jpg", __FILE__ ),// Design
 			"499" => plugins_url( "images/default/byu-arts.jpg", __FILE__ ),// BRAVO!
 			"428" => plugins_url( "images/default/moa.jpg", __FILE__ ),// Museum of Art
 		),
